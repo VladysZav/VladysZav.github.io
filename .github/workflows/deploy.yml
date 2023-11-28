@@ -1,9 +1,9 @@
-name: Deploy Website
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main # замените "main" на вашу основную ветку
+      - main
 
 jobs:
   deploy:
@@ -13,5 +13,25 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Build and Deploy
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
         run: |
+          npm install
+
+      - name: Build
+        run: |
+          npm run build
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git checkout main # Замените на вашу ветку, на которой будет размещен ваш сайт
+          cp -r dist/* . 
+          git add .
+          git commit -m 'Deploy to GitHub Pages'
+          git push
