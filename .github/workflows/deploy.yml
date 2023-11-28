@@ -3,8 +3,7 @@ name: Deploy Website
 on:
   push:
     branches:
-      - main # замените "main" на вашу основную ветку
-
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
