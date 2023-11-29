@@ -15,6 +15,10 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <style>
       .padded-img {
         padding: 2em;
@@ -22,10 +26,31 @@
       .styled-card {
         box-shadow: 0 0 10px rgb(0, 0, 0, 0.4);
       }
-      .card-hover:hover {
+      .card:hover {
+        background-color: rgb(0, 0, 0, 0.1);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         transform: scale(1.05);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card {
+        border-radius: 1em;
+        text-align: center;
+      }
+      .list-group-item:hover {
+        background-color: rgb(0, 0, 0, 0.1);
+      }
+      .list-group-item {
+        border-radius: 1em;
+        transition: background-color 0.3s; /* Плавное изменение цвета фона при hover */
+      }
+      .list-group {
+        border-radius: 1em;
+      }
+      .card img {
+        border-radius: 50%;
+        width: 85%;
+        margin: auto;
+        padding: 1em;
       }
     </style>
   </head>
@@ -62,7 +87,7 @@
     <div class="container my-5">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
         <div class="col">
-          <div class="card card-hover styled-card">
+          <div class="card styled-card">
             <img src="codeImg.png" class="card-img-top" alt="Code" />
             <div class="card-body">
               <h5 class="card-title">Programming languages I know</h5>
@@ -75,12 +100,8 @@
           </div>
         </div>
         <div class="col">
-          <div class="card card-hover styled-card">
-            <img
-              src="frameworkImg.png"
-              class="card-img-top padded-img"
-              alt="Frameworks"
-            />
+          <div class="card styled-card">
+            <img src="frameworkImg.png" class="card-img-top" alt="Frameworks" />
             <div class="card-body">
               <h5 class="card-title">Frameworks I know</h5>
               <ul class="list-group list-group-flush">
@@ -94,13 +115,16 @@
           </div>
         </div>
         <div class="col">
-          <div class="card card-hover styled-card">
+          <div class="card styled-card">
             <img src="toolsImg.icon.jpg" class="card-img-top" alt="Tools" />
             <div class="card-body">
               <h5 class="card-title">Tools that I know</h5>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Devtools</li>
                 <li class="list-group-item">Postman</li>
+                <li class="list-group-item">Doker</li>
+                <li class="list-group-item">Git</li>
+                <li class="list-group-item">GitHub</li>
                 <li class="list-group-item">Jira</li>
               </ul>
             </div>
